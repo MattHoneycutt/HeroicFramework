@@ -99,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Heroic.Web.IoC.nuspec" />
     <None Include="PackageContents\StructureMapConfig.cs.pp" />
     <None Include="packages.config" />
   </ItemGroup>

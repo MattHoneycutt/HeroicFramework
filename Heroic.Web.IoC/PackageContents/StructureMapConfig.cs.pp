@@ -1,8 +1,10 @@
-﻿using System.Web.Mvc;
+﻿using Heroic.Web.IoC;
+using System.Web.Mvc;
 using StructureMap;
+using StructureMap.Graph;
 
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Heroic.Web.IoC.PackageContents.StructureMapConfig), "Configure")]
-namespace Heroic.Web.IoC.PackageContents
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof($rootnamespace$.StructureMapConfig), "Configure")]
+namespace $rootnamespace$
 {
 	public static class StructureMapConfig
 	{
@@ -10,6 +12,12 @@ namespace Heroic.Web.IoC.PackageContents
 		{
 			ObjectFactory.Configure(cfg =>
 			{
+				cfg.Scan(scan =>
+				{
+					scan.TheCallingAssembly();
+					scan.WithDefaultConventions();
+				});
+
 				cfg.AddRegistry<ControllerRegistry>();
 				cfg.AddRegistry<MvcRegistry>();
 
