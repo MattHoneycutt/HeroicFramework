@@ -1,4 +1,5 @@
 ﻿using Heroic.Web.IoC;
+using System.Web.Http;
 using System.Web.Mvc;
 using StructureMap;
 using StructureMap.Graph;
@@ -18,13 +19,15 @@ namespace $rootnamespace$
 					scan.WithDefaultConventions();
 				});
 
-				cfg.AddRegistry<ControllerRegistry>();
-				cfg.AddRegistry<MvcRegistry>();
+				cfg.AddRegistry(new ControllerRegistry());
+				cfg.AddRegistry(new MvcRegistry());
 
 				//TODO: Add other registries and configure your container!
 			});
 
-			DependencyResolver.SetResolver(new StructureMapDependencyResolver());
+			var resolver = new StructureMapDependencyResolver();
+			DependencyResolver.SetResolver(resolver);
+			GlobalConfiguration.Configuration.DependencyResolver = resolver;
 		}
 	}
 }
