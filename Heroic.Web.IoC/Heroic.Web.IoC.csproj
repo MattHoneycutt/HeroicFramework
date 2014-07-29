@@ -101,6 +101,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionFilterRegistry.cs" />
     <Compile Include="ContainerPerRequestExtensions.cs" />
     <Compile Include="ControllerConvention.cs" />
     <Compile Include="ControllerRegistry.cs" />

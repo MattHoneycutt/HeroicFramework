@@ -21,6 +21,7 @@ namespace $rootnamespace$
 
 				cfg.AddRegistry(new ControllerRegistry());
 				cfg.AddRegistry(new MvcRegistry());
+				cfg.AddRegistry(new ActionFilterRegistry(namespacePrefix: "$rootnamespace$"));
 
 				//TODO: Add other registries and configure your container!
 			});

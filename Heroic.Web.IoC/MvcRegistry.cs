@@ -2,6 +2,7 @@
 using System.Web;
 using System.Web.Optimization;
 using System.Web.Routing;
+using StructureMap;
 using StructureMap.Configuration.DSL;
 
 namespace Heroic.Web.IoC
