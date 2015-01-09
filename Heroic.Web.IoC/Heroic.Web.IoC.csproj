@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Heroic.Web.IoC</RootNamespace>
     <AssemblyName>Heroic.Web.IoC</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -109,6 +110,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StructureMapContainerPerRequestModule.cs" />
     <Compile Include="StructureMapDependencyResolver.cs" />
+    <Compile Include="StructureMapFilterProvider.cs" />
     <Compile Include="StructureMapStartup.cs" />
   </ItemGroup>
   <ItemGroup>

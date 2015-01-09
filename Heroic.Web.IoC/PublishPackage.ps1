@@ -1,8 +1,29 @@
+Param(
+  [switch]$DoNotPush,
+  [switch]$PushToLocalFeed
+)
+
+$ProjectName = "Heroic.Web.IoC.csproj"
+
+$LocalTestFeedDir = "C:\Projects\LocalNuGetFeed\"
+
 #Remove existing packages
 Remove-Item *.nupkg
 #Create package
-nuget pack Heroic.Web.IoC.csproj -Build -Properties Configuration=Debug
-#Push
+nuget pack $ProjectName -Build -Properties Configuration=Debug
 $PackageName = gci "*.nupkg"
-nuget push $PackageName
-Remove-Item *.nupkg
+
+if ($PushToLocalFeed) {
+	Write-Host -ForegroundColor Yellow "Deploying to local NuGet test feed!"
+	Copy-Item $PackageName $LocalTestFeedDir
+}
+elseif ($DoNotPush) {
+	Write-Host -ForegroundColor Yellow "Skipping 'nuget push' step!"
+}
+else {
+	#Push
+	Write-Host "About to push to NuGet.org!  Press CTRL+C to abort."
+	pause
+	nuget push $PackageName
+	Remove-Item *.nupkg
+}
