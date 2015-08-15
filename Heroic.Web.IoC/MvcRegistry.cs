@@ -2,7 +2,6 @@
 using System.Web;
 using System.Web.Optimization;
 using System.Web.Routing;
-using StructureMap;
 using StructureMap.Configuration.DSL;
 
 namespace Heroic.Web.IoC
@@ -20,6 +19,8 @@ namespace Heroic.Web.IoC
 				.Use(() => new HttpContextWrapper(HttpContext.Current));
 			For<HttpServerUtilityBase>()
 				.Use(() => new HttpServerUtilityWrapper(HttpContext.Current.Server));
+			For<HttpRequestBase>()
+				.Use(ctx => ctx.GetInstance<HttpContextBase>().Request);
 		}
 	}
 }
