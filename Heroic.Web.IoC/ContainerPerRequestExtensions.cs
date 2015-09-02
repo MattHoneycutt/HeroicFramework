@@ -9,7 +9,7 @@ namespace Heroic.Web.IoC
 
 		public static IContainer GetContainer(this HttpContextBase context)
 		{
-			return (IContainer)context.Items[ContainerKey] ?? ObjectFactory.Container;
+			return (IContainer)context.Items[ContainerKey] ?? IoC.Container;
 		}
 
 		public static void SetContainer(this HttpContextBase context, IContainer container)

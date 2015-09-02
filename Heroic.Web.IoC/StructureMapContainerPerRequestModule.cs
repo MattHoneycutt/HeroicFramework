@@ -26,7 +26,7 @@ namespace Heroic.Web.IoC
 
 		private void CreateContainer(object sender, EventArgs e)
 		{
-			Container = ObjectFactory.Container.GetNestedContainer();
+			Container = IoC.Container.GetNestedContainer();
 		}
 
 		private void DisposeOfContainer(object sender, EventArgs e)

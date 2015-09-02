@@ -11,7 +11,7 @@ namespace $rootnamespace$
 	{
 		public static void Configure()
 		{
-			ObjectFactory.Configure(cfg =>
+			IoC.Container.Configure(cfg =>
 			{
 				cfg.Scan(scan =>
 				{

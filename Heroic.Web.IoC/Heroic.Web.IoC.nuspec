@@ -6,9 +6,9 @@
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
-    <!--<licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
-    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
-    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>-->
+    <licenseUrl>https://github.com/MattHoneycutt/HeroicFramework/blob/master/Heroic.Web.IoC/license.txt</licenseUrl>
+    <projectUrl>https://github.com/MattHoneycutt/HeroicFramework/tree/master/Heroic.Web.IoC</projectUrl>
+    <!--<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>-->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes></releaseNotes>
@@ -17,5 +17,6 @@
   </metadata>
 	<files>
 		<file src="PackageContents\StructureMapConfig.cs.pp" target="content\App_Start\" />
+		<file src="PackageContents\readme.txt" target="" />
 	</files>
 </package>
