@@ -6,6 +6,8 @@ namespace Heroic.Web.IoC
 {
 	public class StructureMapContainerPerRequestModule : IHttpModule
 	{
+		public static event Action<IContainer> PreDisposeContainer;
+
 		public static IContainer Container
 		{
 			get
@@ -22,6 +24,9 @@ namespace Heroic.Web.IoC
 		{
 			context.BeginRequest += CreateContainer;
 			context.EndRequest += DisposeOfContainer;
+			
+			//Ensures the event is always defined.
+			PreDisposeContainer += _ => { };
 		}
 
 		private void CreateContainer(object sender, EventArgs e)
@@ -31,8 +36,15 @@ namespace Heroic.Web.IoC
 
 		private void DisposeOfContainer(object sender, EventArgs e)
 		{
-			Container.Dispose();
-			Container = null;
+			try
+			{
+				PreDisposeContainer(Container);
+			}
+			finally
+			{
+				Container.Dispose();
+				Container = null;
+			}
 		}
 
 		public void Dispose()
