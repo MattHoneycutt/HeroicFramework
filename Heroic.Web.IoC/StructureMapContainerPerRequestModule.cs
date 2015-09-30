@@ -42,8 +42,11 @@ namespace Heroic.Web.IoC
 			}
 			finally
 			{
-				Container.Dispose();
-				Container = null;
+				if (Container.Role != ContainerRole.Root)
+				{
+					Container.Dispose();
+					Container = null;
+				}
 			}
 		}
 
