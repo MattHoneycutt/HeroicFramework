@@ -8,6 +8,22 @@ namespace Heroic.AutoMapper
 {
 	public static class HeroicAutoMapperConfigurator
 	{
+		public static void LoadMapsFromAssemblyContainingTypeAndReferencedAssemblies<TType>(Func<AssemblyName, bool> assemblyFilter = null)
+		{
+			var target = typeof (TType).Assembly;
+
+			Func<AssemblyName, bool> loadAllFilter = (x => true);
+
+			var assembliesToLoad = target.GetReferencedAssemblies()
+				.Where(assemblyFilter ?? loadAllFilter)
+				.Select(a => Assembly.Load(a))
+				.ToList();
+
+			assembliesToLoad.Add(target);
+
+			LoadMapsFromAssemblies(assembliesToLoad.ToArray());
+		}
+
 		public static void LoadMapsFromCallerAndReferencedAssemblies(Func<AssemblyName, bool> assemblyFilter = null)
 		{
 			var target = Assembly.GetCallingAssembly();
