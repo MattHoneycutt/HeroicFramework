@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using StructureMap.Configuration.DSL;
+using StructureMap;
 
 namespace Heroic.Web.IoC
 {

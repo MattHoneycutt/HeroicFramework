@@ -1,6 +1,5 @@
-using System.Reflection;
 using System.Web.Mvc;
-using StructureMap.Configuration.DSL;
+using StructureMap;
 using StructureMap.TypeRules;
 
 namespace Heroic.Web.IoC
