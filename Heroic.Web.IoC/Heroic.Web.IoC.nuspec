@@ -8,7 +8,7 @@
     <owners>$author$</owners>
     <licenseUrl>https://github.com/MattHoneycutt/HeroicFramework/blob/master/Heroic.Web.IoC/license.txt</licenseUrl>
     <projectUrl>https://github.com/MattHoneycutt/HeroicFramework/tree/master/Heroic.Web.IoC</projectUrl>
-    <!--<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>-->
+    <iconUrl>https://raw.githubusercontent.com/MattHoneycutt/HeroicFramework/master/NugetIcon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes></releaseNotes>
