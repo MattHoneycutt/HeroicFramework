@@ -127,8 +127,8 @@
     <None Include="Readme.md" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PackageContents\readme.txt" />
-    <Content Include="license.txt" />
+    <None Include="PackageContents\readme.txt" />
+    <None Include="license.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
