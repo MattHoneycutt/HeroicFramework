@@ -44,16 +44,20 @@ namespace Heroic.AutoMapper
 		{
 			var types = assemblies.SelectMany(a => a.GetExportedTypes()).ToArray();
 
-			Mapper.Initialize(cfg =>
-			{
-				LoadIMapFromMappings(cfg, types);
-				LoadIMapToMappings(cfg, types);
+            #pragma warning disable 618
+		    Mapper.Initialize(cfg => Load(cfg, types));
+            #pragma warning restore 618
+        }
 
-				LoadCustomMappings(cfg, types);
-			});
-		}
+	    private static void Load(IMapperConfiguration cfg, Type[] types)
+	    {
+            LoadIMapFromMappings(cfg, types);
+            LoadIMapToMappings(cfg, types);
 
-		private static void LoadCustomMappings(IConfiguration cfg, IEnumerable<Type> types)
+            LoadCustomMappings(cfg, types);
+        }
+
+        private static void LoadCustomMappings(IMapperConfiguration cfg, IEnumerable<Type> types)
 		{
 			var maps = (from t in types
 						from i in t.GetInterfaces()
@@ -68,7 +72,7 @@ namespace Heroic.AutoMapper
 			}
 		}
 
-		private static void LoadIMapFromMappings(IConfiguration cfg, IEnumerable<Type> types)
+		private static void LoadIMapFromMappings(IMapperConfiguration cfg, IEnumerable<Type> types)
 		{
 			var maps = (from t in types
 						from i in t.GetInterfaces()
@@ -87,7 +91,7 @@ namespace Heroic.AutoMapper
 			}
 		}
 
-		private static void LoadIMapToMappings(IConfiguration cfg, IEnumerable<Type> types)
+		private static void LoadIMapToMappings(IMapperConfiguration cfg, IEnumerable<Type> types)
 		{
 			var maps = (from t in types
 						from i in t.GetInterfaces()

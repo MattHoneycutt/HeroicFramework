@@ -17,5 +17,6 @@
 	</metadata>
 	<files>
 		<file src="PackageContents\AutoMapperConfig.cs.pp" target="content\App_Start\" />
-	</files>
+    <file src="PackageContents\readme.txt" target="" />
+  </files>
 </package>
