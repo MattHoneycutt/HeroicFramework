@@ -41,7 +41,7 @@ But what if you need to customize your mappings?  Implement IHaveCustomMappings 
 
 		public string EmailAddress { get; set; }
 
-		public void CreateMappings(IConfiguration configuration)
+		public void CreateMappings(IMapperConfiguration configuration)
 		{
 			configuration.CreateMap<User, ProfileForm>()
 				.ForMember(d => d.FullName, opt => opt.MapFrom(s => s.UserName))
