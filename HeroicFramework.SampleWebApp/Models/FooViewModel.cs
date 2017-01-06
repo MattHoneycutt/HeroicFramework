@@ -11,7 +11,7 @@ namespace HeroicFramework.SampleWebApp.Models
 
         public string Name { get; set; }
 
-        public void CreateMappings(IMapperConfiguration configuration)
+        public void CreateMappings(IMapperConfigurationExpression configuration)
         {
             configuration.CreateMap<Foo, FooViewModel>()
                 .ForMember(x => x.Name, opt => opt.MapFrom(x => x.FullName));

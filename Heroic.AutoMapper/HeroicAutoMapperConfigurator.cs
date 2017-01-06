@@ -49,7 +49,7 @@ namespace Heroic.AutoMapper
             #pragma warning restore 618
         }
 
-	    private static void Load(IMapperConfiguration cfg, Type[] types)
+	    private static void Load(IMapperConfigurationExpression cfg, Type[] types)
 	    {
             LoadIMapFromMappings(cfg, types);
             LoadIMapToMappings(cfg, types);
@@ -57,7 +57,7 @@ namespace Heroic.AutoMapper
             LoadCustomMappings(cfg, types);
         }
 
-        private static void LoadCustomMappings(IMapperConfiguration cfg, IEnumerable<Type> types)
+        private static void LoadCustomMappings(IMapperConfigurationExpression cfg, IEnumerable<Type> types)
 		{
 			var maps = (from t in types
 						from i in t.GetInterfaces()
@@ -72,7 +72,7 @@ namespace Heroic.AutoMapper
 			}
 		}
 
-		private static void LoadIMapFromMappings(IMapperConfiguration cfg, IEnumerable<Type> types)
+		private static void LoadIMapFromMappings(IMapperConfigurationExpression cfg, IEnumerable<Type> types)
 		{
 			var maps = (from t in types
 						from i in t.GetInterfaces()
@@ -91,7 +91,7 @@ namespace Heroic.AutoMapper
 			}
 		}
 
-		private static void LoadIMapToMappings(IMapperConfiguration cfg, IEnumerable<Type> types)
+		private static void LoadIMapToMappings(IMapperConfigurationExpression cfg, IEnumerable<Type> types)
 		{
 			var maps = (from t in types
 						from i in t.GetInterfaces()
