@@ -59,14 +59,14 @@ namespace Heroic.AutoMapper
 
         private static void LoadCustomMappings(IMapperConfigurationExpression cfg, IEnumerable<Type> types)
 		{
-			var maps = (from t in types
-						from i in t.GetInterfaces()
-						where typeof(IHaveCustomMappings).IsAssignableFrom(t) &&
-							  !t.IsAbstract &&
-							  !t.IsInterface
-						select (IHaveCustomMappings)Activator.CreateInstance(t)).ToArray();
+		    var maps = types
+		        .Where(t => !t.IsAbstract && !t.IsInterface)
+		        .Where(t => t.GetInterfaces()
+		            .Any(i => typeof(IHaveCustomMappings).IsAssignableFrom(t)))
+		        .Select(t => (IHaveCustomMappings)Activator.CreateInstance(t))
+		        .ToArray();
 
-			foreach (var map in maps)
+            foreach (var map in maps)
 			{
 				map.CreateMappings(cfg);
 			}
@@ -74,18 +74,18 @@ namespace Heroic.AutoMapper
 
 		private static void LoadIMapFromMappings(IMapperConfigurationExpression cfg, IEnumerable<Type> types)
 		{
-			var maps = (from t in types
-						from i in t.GetInterfaces()
-						where i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IMapFrom<>) &&
-							  !t.IsAbstract &&
-							  !t.IsInterface
-						select new
-						{
-							Source = i.GetGenericArguments()[0],
-							Destination = t
-						}).ToArray();
+            var maps = (from t in types
+                        from i in t.GetInterfaces()
+                        where i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IMapFrom<>) &&
+                              !t.IsAbstract &&
+                              !t.IsInterface
+                        select new
+                        {
+                            Source = i.GetGenericArguments()[0],
+                            Destination = t
+                        }).ToArray();
 
-			foreach (var map in maps)
+            foreach (var map in maps)
 			{
 				cfg.CreateMap(map.Source, map.Destination);
 			}
