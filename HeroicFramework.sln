@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heroic.Web.IoC", "Heroic.Web.IoC\Heroic.Web.IoC.csproj", "{467F081A-829C-4C98-B7C7-E6008D08EA96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heroic.AutoMapper", "Heroic.AutoMapper\Heroic.AutoMapper.csproj", "{5D2D8F7A-C449-4787-807C-EDE3CADE2A9A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heroic.AutoMapper.Legacy", "Heroic.AutoMapper.Legacy\Heroic.AutoMapper.Legacy.csproj", "{5D2D8F7A-C449-4787-807C-EDE3CADE2A9A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8389CF51-39DB-4111-869B-D2F44C15AE7D}"
 	ProjectSection(SolutionItems) = preProject
