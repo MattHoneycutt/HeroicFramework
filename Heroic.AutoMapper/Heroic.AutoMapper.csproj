@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>Heroic.AutoMapper</PackageId>
+    <Version>5.0.0-beta01</Version>
+    <Authors>Matt Honeycutt</Authors>
+    <Company>Heroic Applications</Company>
+
+    <PackageLicenseUrl>https://github.com/MattHoneycutt/HeroicFramework/blob/master/Heroic.AutoMapper/license.txt</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/MattHoneycutt/HeroicFramework/tree/master/Heroic.AutoMapper</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/MattHoneycutt/HeroicFramework/master/NugetIcon.png</PackageIconUrl>
+    <Description>Conventionally create and configure AutoMapper mappings.</Description>
+    <PackageReleaseNotes>
+      First version that targets .NET Standard!
+    </PackageReleaseNotes>
+    <Copyright>Copyright 2018</Copyright>
+    <PackageTags>AutoMapper;Heroic;.NET Core;ASP.NET Core</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.2.2" />
+  </ItemGroup>
+
+</Project>

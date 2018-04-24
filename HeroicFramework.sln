@@ -16,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demos", "Demos", "{60265094
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroicFramework.SampleWebApp", "HeroicFramework.SampleWebApp\HeroicFramework.SampleWebApp.csproj", "{68E3BAFB-1AA5-4477-B747-1C745F2E9BAA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heroic.AutoMapper", "Heroic.AutoMapper\Heroic.AutoMapper.csproj", "{55C50F9D-6BC0-41CF-ACA0-BB23425BCBF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,11 +36,18 @@ Global
 		{68E3BAFB-1AA5-4477-B747-1C745F2E9BAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68E3BAFB-1AA5-4477-B747-1C745F2E9BAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68E3BAFB-1AA5-4477-B747-1C745F2E9BAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55C50F9D-6BC0-41CF-ACA0-BB23425BCBF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55C50F9D-6BC0-41CF-ACA0-BB23425BCBF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55C50F9D-6BC0-41CF-ACA0-BB23425BCBF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55C50F9D-6BC0-41CF-ACA0-BB23425BCBF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{68E3BAFB-1AA5-4477-B747-1C745F2E9BAA} = {60265094-8282-41B3-8FAD-77A0DDE60F44}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FEF4EEA3-1587-45B1-BBCE-E9636D6D61E5}
 	EndGlobalSection
 EndGlobal
