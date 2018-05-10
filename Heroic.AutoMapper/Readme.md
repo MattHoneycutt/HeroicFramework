@@ -58,7 +58,7 @@ For an ASP.NET Core application, you should configure Heroic.AutoMapper in your 
 //..
 using Heroic.AutoMapper;
 
-namespace SmartMoving.Api
+namespace YourNamespace
 {
     public class Startup
     {
