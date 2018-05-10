@@ -16,6 +16,22 @@ Install via [nuget](https://www.nuget.org/packages/Heroic.AutoMapper):
 
 Just call `HeroicAutoMapperConfigurator.Configure` during your application's startup.
 
+### ASP.NET MVC 5 and Web API 2
+
+For "classic" versions of ASP.NET, you should call `HeroicAutoMapperConfigurator` in your `Global.asax`:
+
+```c#
+    public class MvcApplication : System.Web.HttpApplication
+    {
+        protected void Application_Start()
+        {
+            AreaRegistration.RegisterAllAreas();
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            HeroicAutoMapperConfigurator.LoadMapsFromAssemblyContainingTypeAndReferencedAssemblies<HomeController>();
+        }
+    }
+```
+
 ### Console Application Setup
 
 For a simple console application, you might do something like this:
